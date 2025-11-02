@@ -33,6 +33,7 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -76,8 +77,14 @@
     #  thunderbird
       vscode-fhs
       git
+      winboat
+      vesktop
+      keepassxc
+      neofetch
     ];
   };
+
+  programs.steam.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -91,6 +98,21 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
+
+  # NVIDIA Configuration
+  hardware.graphics.enable = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    open = true;
+  };
+
+  virtualisation.docker.enable = true;
+
+  users.groups.docker = {
+    members = [ "suller" ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
