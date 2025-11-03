@@ -32,7 +32,6 @@
         }
         nur.modules.nixos.default
       ];
-      specialArgs = { inherit pkgs; };
     };
   };
 }

@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+
+  imports = [
+    ./modules/home/fish.nix
+  ]
   home.username = "suller";
   home.homeDirectory = "/home/suller";
 
@@ -14,4 +18,19 @@
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
+
+  home.packages = with pkgs; [
+    kdePackages.kate
+    vscode-fhs
+    winboat
+    vesktop
+    keepassxc
+    gparted
+    distrobox
+    python315
+    librewolf-bin
+    rustdesk
+    lazygit
+  ];
+
 }

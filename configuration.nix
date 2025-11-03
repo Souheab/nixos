@@ -80,31 +80,11 @@
     isNormalUser = true;
     description = "Suller";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-      vscode-fhs
-      winboat
-      vesktop
-      keepassxc
-      neofetch
-      gparted
-      distrobox
-      efibootmgr
-      distrobox
-      python315
-      librewolf-bin
-      rustdesk
-    ];
   };
 
   # fish shell
   programs.fish.enable = true;
   users.users.suller.shell = pkgs.fish;
-
-  programs.steam.enable = true;
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -123,6 +103,9 @@
   users.groups.docker = {
     members = [ "suller" ];
   };
+
+  programs.steam.enable = true;
+  programs.firefox.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

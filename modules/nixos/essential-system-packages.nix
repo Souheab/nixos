@@ -7,5 +7,11 @@
     git
     btop
     htop
+    neofetch
+    efibootmgr
+    fzf
+    ripgrep
+    fd
+    tealdeer
   ];
 }
