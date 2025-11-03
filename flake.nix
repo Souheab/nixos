@@ -14,6 +14,7 @@
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
+    mypkgs = import ./packages { inherit pkgs; inherit (pkgs) lib; };
     nur-modules = import nur {
       nurpkgs = nixpkgs.legacyPackages.${system};
       pkgs = nixpkgs.legacyPackages.${system};
@@ -21,6 +22,7 @@
   in
   {
     nixosConfigurations.lancestrom = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit mypkgs; };
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager

@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/nixos/essential-system-packages.nix
+      ./modules/nixos/dwm.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -5,6 +5,7 @@
     ./modules/home/fish.nix
     ./modules/home/kitty.nix
     ./modules/home/wezterm.nix
+    ./modules/home/dwm.nix
   ];
 
   home.username = "suller";
