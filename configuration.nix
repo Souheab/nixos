@@ -11,18 +11,7 @@
       ./modules/nixos/essential-system-packages.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
-  boot.loader.systemd-boot.windows = {
-    "11" = {
-      title = "Michaelsoft Binbows 67";
-      efiDeviceHandle = "HD2b";
-    };
-  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  networking.hostName = "lancestrom"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -41,7 +30,6 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -88,15 +76,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # NVIDIA Configuration
-  hardware.graphics.enable = true;
-  hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    open = true;
-  };
 
   virtualisation.docker.enable = true;
 

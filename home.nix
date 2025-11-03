@@ -3,7 +3,9 @@
 
   imports = [
     ./modules/home/fish.nix
-  ]
+    ./modules/home/kitty.nix
+  ];
+
   home.username = "suller";
   home.homeDirectory = "/home/suller";
 

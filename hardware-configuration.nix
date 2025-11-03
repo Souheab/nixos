@@ -46,4 +46,28 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
+  boot.loader.systemd-boot.windows = {
+    "11" = {
+      title = "Michaelsoft Binbows 67";
+      efiDeviceHandle = "HD2b";
+    };
+  };
+
+  # NVIDIA Configuration
+  hardware.graphics.enable = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    open = true;
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  networking.hostName = "lancestrom"; # Define your hostname.
 }
