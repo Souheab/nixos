@@ -4,6 +4,7 @@
   imports = [
     ./modules/home/fish.nix
     ./modules/home/kitty.nix
+    ./modules/home/wezterm.nix
   ];
 
   home.username = "suller";
