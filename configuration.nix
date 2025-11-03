@@ -8,13 +8,21 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/nixos/essential-system-packages.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
+  boot.loader.systemd-boot.windows = {
+    "11" = {
+      title = "Michaelsoft Binbows 67";
+      efiDeviceHandle = "HD2b";
+    };
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "lancestrom"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -74,15 +82,24 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
       vscode-fhs
-      git
       winboat
       vesktop
       keepassxc
       neofetch
+      gparted
+      distrobox
+      efibootmgr
+      distrobox
+      python315
+      librewolf-bin
+      rustdesk
     ];
   };
+
+  # fish shell
+  programs.fish.enable = true;
+  users.users.suller.shell = pkgs.fish;
 
   programs.steam.enable = true;
 
@@ -91,13 +108,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
 
   # NVIDIA Configuration
   hardware.graphics.enable = true;

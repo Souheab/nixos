@@ -11,7 +11,7 @@
     pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
   in
   {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.lancestrom = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix  # Your existing NixOS config file
       ];
