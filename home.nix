@@ -47,6 +47,8 @@
     xorg.xprop
     pamixer
     nerd-fonts.fira-code
+    networkmanagerapplet
+    obs-studio
   ];
 
 }
