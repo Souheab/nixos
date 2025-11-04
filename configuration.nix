@@ -33,8 +33,13 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.greeters.slick.enable = true;
+  security.pam.services.suller.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
   services.desktopManager.plasma6.enable = true;
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -83,6 +88,11 @@
   users.groups.docker = {
     members = [ "suller" ];
   };
+
+    environment.systemPackages = with pkgs; [
+      gnome-keyring
+      libsecret
+  ];
 
   programs.steam.enable = true;
   programs.firefox.enable = true;

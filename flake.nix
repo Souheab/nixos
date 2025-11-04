@@ -27,7 +27,7 @@
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
-          home-manager.extraSpecialArgs = { inherit system; };
+          home-manager.extraSpecialArgs = { inherit system; inherit mypkgs; };
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.suller = import ./home.nix;

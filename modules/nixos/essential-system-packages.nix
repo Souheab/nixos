@@ -13,5 +13,7 @@
     ripgrep
     fd
     tealdeer
+    killall
+    gnumake
   ];
 }

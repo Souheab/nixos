@@ -35,6 +35,13 @@
     librewolf-bin
     rustdesk
     lazygit
+    pavucontrol
+    seahorse
+    blueman
+    spotify-player
+    spotify
+    eww
+    xorg.xprop
   ];
 
 }
