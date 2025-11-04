@@ -6,6 +6,7 @@
     ./modules/home/kitty.nix
     ./modules/home/wezterm.nix
     ./modules/home/dwm.nix
+    ./modules/home/rofi.nix
   ];
 
   home.username = "suller";
@@ -22,6 +23,8 @@
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
+
+  fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
     kdePackages.kate
@@ -42,6 +45,8 @@
     spotify
     eww
     xorg.xprop
+    pamixer
+    nerd-fonts.fira-code
   ];
 
 }
