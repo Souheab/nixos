@@ -49,6 +49,7 @@
     nerd-fonts.fira-code
     networkmanagerapplet
     obs-studio
+    mpv
   ];
 
 }
