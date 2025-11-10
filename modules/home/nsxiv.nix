@@ -1,7 +1,7 @@
-{...}: 
+{pkgs, ...}: 
 {
   home.packages = with pkgs; [
-    nsxiv.override {
+    (nsxiv.override {
       conf = ''
         #ifdef INCLUDE_WINDOW_CONFIG
 
@@ -127,7 +127,7 @@
           { 0,            XK_minus,         g_zoom,               -1 },
           { 0,            XK_KP_Subtract,   g_zoom,               -1 },
           { 0,            XK_equal,         g_zoom,               +1 }, 
-          { 0,            XK_KP_0,         g_set_zoom,           100 },
+          { 0,            XK_KP_0,          i_set_zoom,           100 },
           { ControlMask,  XK_equal,         g_zoom,               +1 },
           { ControlMask,  XK_minus,         g_zoom,               -1 },
           { 0,            XK_m,             g_toggle_image_mark,  None },
@@ -169,9 +169,9 @@
           { ControlMask,  XK_a,             i_toggle_animation,   None },
           { 0,            XK_h,             i_scroll,             DIR_LEFT },
           { 0,            XK_Left,          i_scroll,             DIR_LEFT },
-          { 0,            XK_j,             i_navigate,           -1 },
+          { 0,            XK_k,             i_navigate,           -1 },
           { 0,            XK_Down,          i_scroll,             DIR_DOWN },
-          { 0,            XK_k,             i_navigate,           +1 },
+          { 0,            XK_j,             i_navigate,           +1 },
           { 0,            XK_Up,            i_scroll,             DIR_UP },
           { 0,            XK_l,             i_scroll,             DIR_RIGHT },
           { 0,            XK_Right,         i_scroll,             DIR_RIGHT },
@@ -180,7 +180,6 @@
           { 0,            XK_K,             i_scroll,             DIR_UP },
           { 0,            XK_L,             i_scroll,             DIR_RIGHT },
           { 0,            XK_z,             i_scroll_to_center,   None },
-          { 0,            XK_equal,         i_set_zoom,           100 },
           { 0,            XK_w,             i_fit_to_win,         SCALE_DOWN },
           { 0,            XK_W,             i_fit_to_win,         SCALE_FIT },
           { 0,            XK_F,             i_fit_to_win,         SCALE_FILL },
@@ -229,7 +228,7 @@
         };
 
         #endif
-      ''
-    }
+      '';
+    })
   ];
 }

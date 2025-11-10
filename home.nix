@@ -8,6 +8,7 @@
     ./modules/home/dwm.nix
     ./modules/home/rofi.nix
     ./modules/home/yazi.nix
+    ./modules/home/nsxiv.nix
   ];
 
   home.username = "suller";
@@ -24,6 +25,15 @@
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
+
+  programs.zathura = {
+    enable = true;
+  };
+
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
 
   fonts.fontconfig.enable = true;
 
@@ -51,6 +61,7 @@
     networkmanagerapplet
     obs-studio
     mpv
+    alpaca
   ];
 
 }
