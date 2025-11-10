@@ -15,5 +15,6 @@
     tealdeer
     killall
     gnumake
+    nix-index
   ];
 }
