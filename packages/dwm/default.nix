@@ -1,6 +1,6 @@
 { dwm 
 , fetchFromGitHub
-, kitty
+, wezterm
 , rofi
 }:
 
@@ -14,7 +14,7 @@ dwm.overrideAttrs {
 
   postPatch = ''
   substituteInPlace config.h \
-    --replace 'wezterm' '${kitty}/bin/kitty' \
+    --replace 'wezterm' '${wezterm}/bin/wezterm' \
     --replace 'rofi' '${rofi}/bin/rofi'
   '';
   passthru.updateScript = null;
