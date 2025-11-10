@@ -16,5 +16,6 @@
     killall
     gnumake
     nix-index
+    xclip
   ];
 }
