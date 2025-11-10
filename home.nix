@@ -62,6 +62,7 @@
     obs-studio
     mpv
     alpaca
+    fabric-ai
   ];
 
 }
