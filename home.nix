@@ -7,6 +7,7 @@
     ./modules/home/wezterm.nix
     ./modules/home/dwm.nix
     ./modules/home/rofi.nix
+    ./modules/home/yazi.nix
   ];
 
   home.username = "suller";
