@@ -9,6 +9,7 @@
     ./modules/home/rofi.nix
     ./modules/home/yazi.nix
     ./modules/home/nsxiv.nix
+    ./modules/home/nixvim.nix
   ];
 
   home.username = "suller";

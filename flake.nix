@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = "github:nix-community/NUR";
+    nixvim.url = "github:Souheab/nixvim";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }:
@@ -27,7 +28,7 @@
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
-          home-manager.extraSpecialArgs = { inherit system; inherit mypkgs; };
+          home-manager.extraSpecialArgs = { inherit system; inherit mypkgs; inherit nixvim; };
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.suller = import ./home.nix;
