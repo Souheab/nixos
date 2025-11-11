@@ -35,6 +35,47 @@
     acceleration = "cuda";
   };
 
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    Unit = {
+      Description = "polkit-gnome-authentication-agent-1";
+      Wants = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
+
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/x-extension-htm" = "firefox.desktop";
+      "application/x-extension-html" = "firefox.desktop";
+      "application/x-extension-shtml" = "firefox.desktop";
+      "application/x-extension-xht" = "firefox.desktop";
+      "application/x-extension-xhtml" = "firefox.desktop";
+      "application/xhtml+xml" = "firefox.desktop";
+      "image/png" = "nsxiv-2.desktop";
+      "image/jpeg" = "nsxiv-2.desktop";
+      "image/gif" = "nsxiv-2.desktop";
+      "image/webp" = "nsxiv-2.desktop";
+      "image/*" = "nsxiv-2.desktop";
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/chrome" = "firefox.desktop";
+      "x-scheme-handler/discord" = "vesktop.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+    };
+  };
+
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
@@ -63,6 +104,8 @@
     mpv
     alpaca
     fabric-ai
+    xfce.thunar
+    xfce.tumbler
   ];
 
 }

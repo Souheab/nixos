@@ -32,6 +32,8 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
+  services.flatpak.enable = true;
+
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.lightdm.greeters.slick.enable = true;
@@ -96,6 +98,8 @@
 
   programs.steam.enable = true;
   programs.firefox.enable = true;
+
+  security.polkit.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
