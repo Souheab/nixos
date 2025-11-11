@@ -11,7 +11,7 @@
     nixvim.url = "github:Souheab/nixvim";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }:
+  outputs = { self, nixpkgs, home-manager, nur, nixvim, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
