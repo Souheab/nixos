@@ -17,5 +17,8 @@
     gnumake
     nix-index
     xclip
+    yt-dlp
+    ffmpeg
+    gcc
   ];
 }

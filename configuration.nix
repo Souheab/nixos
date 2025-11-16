@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./modules/nixos/essential-system-packages.nix
       ./modules/nixos/dwm.nix
+      ./modules/nixos/nordvpn.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

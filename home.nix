@@ -107,6 +107,9 @@
     fabric-ai
     xfce.thunar
     xfce.tumbler
+    deluge
+    logseq
+    android-studio
   ];
 
 }
