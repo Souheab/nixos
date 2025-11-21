@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, mypkgs, ... }:
 {
 
   imports = [
@@ -110,6 +110,8 @@
     deluge
     logseq
     android-studio
+    gimp3-with-plugins
+    opencode
   ];
 
 }

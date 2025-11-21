@@ -20,5 +20,6 @@
     yt-dlp
     ffmpeg
     gcc
+    file
   ];
 }

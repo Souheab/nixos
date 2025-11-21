@@ -11,6 +11,7 @@
       ./modules/nixos/essential-system-packages.nix
       ./modules/nixos/dwm.nix
       ./modules/nixos/nordvpn.nix
+      ./modules/nixos/awesome.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
