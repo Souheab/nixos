@@ -114,6 +114,8 @@
     gimp3-with-plugins
     opencode
     zoxide
+    emacs
+    imagemagick
   ];
 
 }
