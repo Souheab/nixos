@@ -10,6 +10,7 @@
     ./modules/home/yazi.nix
     ./modules/home/nsxiv.nix
     ./modules/home/nixvim.nix
+    ./modules/home/awesome.nix
   ];
 
   home.username = "suller";
@@ -112,6 +113,7 @@
     android-studio
     gimp3-with-plugins
     opencode
+    zoxide
   ];
 
 }
