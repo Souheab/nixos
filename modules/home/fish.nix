@@ -127,6 +127,10 @@
   # ~/.config/fish/config.fish):
   #
   #   zoxide init fish | source
+
+
+  set -x EDITOR nvim
+  set -x VISUAL nvim
   '';
 
   programs.fish.shellAbbrs = {

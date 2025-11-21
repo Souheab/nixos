@@ -116,6 +116,9 @@
     zoxide
     emacs
     imagemagick
+    taskwarrior2
+    taskwarrior-tui
+    ani-cli
   ];
 
 }
