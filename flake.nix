@@ -7,11 +7,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    "awesome-flake" = {
+      url = "github:Souheab/awesomewm-git-nix-flake";
+    };
     nur.url = "github:nix-community/NUR";
     nixvim.url = "github:Souheab/nixvim";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, nixvim, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixvim, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
@@ -23,7 +26,7 @@
   in
   {
     nixosConfigurations.lancestrom = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit mypkgs; };
+      specialArgs = { inherit mypkgs; "awesome-flake" = inputs."awesome-flake"; };
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager

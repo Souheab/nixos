@@ -126,6 +126,7 @@
     pngtools
     qdirstat
     kdePackages.kdenlive
+    element-desktop
   ];
 
 }
