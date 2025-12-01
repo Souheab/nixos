@@ -21,5 +21,6 @@
     ffmpeg
     gcc
     file
+    uv
   ];
 }

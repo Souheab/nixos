@@ -119,6 +119,13 @@
     taskwarrior2
     taskwarrior-tui
     ani-cli
+    xournalpp
+    texlive.combined.scheme-full
+    flameshot
+    libreoffice-qt6-fresh
+    pngtools
+    qdirstat
+    kdePackages.kdenlive
   ];
 
 }
