@@ -127,6 +127,7 @@
     qdirstat
     kdePackages.kdenlive
     element-desktop
+    antigravity
   ];
 
 }

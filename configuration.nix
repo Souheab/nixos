@@ -40,7 +40,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.lightdm.greeters.slick.enable = true;
-  security.pam.services.suller.enableGnomeKeyring = true;
+  security.pam.services.login.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
   services.desktopManager.plasma6.enable = true;
   hardware.bluetooth.enable = true;
@@ -97,10 +97,12 @@
     environment.systemPackages = with pkgs; [
       gnome-keyring
       libsecret
+      gpu-screen-recorder-gtk
   ];
 
   programs.steam.enable = true;
   programs.firefox.enable = true;
+  programs.gpu-screen-recorder.enable = true;
 
   security.polkit.enable = true;
 
