@@ -128,6 +128,7 @@
     kdePackages.kdenlive
     element-desktop
     antigravity
+    google-chrome
   ];
 
 }

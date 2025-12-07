@@ -66,6 +66,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     open = true;
   };
+  hardware.nvidia-container-toolkit.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
