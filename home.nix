@@ -89,7 +89,7 @@
     gparted
     distrobox
     python315
-    librewolf-bin
+    librewolf
     rustdesk
     lazygit
     pavucontrol
