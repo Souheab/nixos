@@ -129,6 +129,8 @@
     element-desktop
     antigravity
     google-chrome
+    freetube
+    tor-browser
   ];
 
 }

@@ -5,7 +5,7 @@
     vim
     wget
     git
-    btop
+    btop-cuda
     htop
     neofetch
     efibootmgr
