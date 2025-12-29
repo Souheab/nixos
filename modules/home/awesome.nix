@@ -1,5 +1,7 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
+  imports = [ ./sxhkd.nix ];
+
   home.file.".xprofile".text = ''
     #!/bin/sh
 
