@@ -4,6 +4,9 @@ stdenv.mkDerivation rec {
   pname = "btremacsd-nix";
   version = "1.0";
 
+  src = null;
+  dontUnpack = true;
+
   # Script only; pull runtime deps so the user can run it directly.
   dontBuild = true;
   buildInputs = [ xdotool emacs xorg.xorgserver ];

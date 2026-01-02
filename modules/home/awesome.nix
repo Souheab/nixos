@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, mypkgs, ... }:
 {
   imports = [ ./sxhkd.nix ];
 
@@ -9,5 +9,6 @@
     ${pkgs.picom}/bin/picom &
     ${pkgs.networkmanagerapplet}/bin/nm-applet &
     ${pkgs.flameshot}/bin/flameshot &
+    ${mypkgs.btremacsd-nix}/bin/btremacsd-nix -r &
   '';
 }

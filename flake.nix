@@ -25,6 +25,7 @@
     };
   in
   {
+    # Allow building my own packages with nix build e.g. nix build .#sgbar
     packages.${system} = mypkgs;
     nixosConfigurations.lancestrom = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit mypkgs; "awesome-flake" = inputs."awesome-flake"; };
