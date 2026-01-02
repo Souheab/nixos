@@ -25,6 +25,7 @@
     };
   in
   {
+    packages.${system} = mypkgs;
     nixosConfigurations.lancestrom = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit mypkgs; "awesome-flake" = inputs."awesome-flake"; };
       modules = [
